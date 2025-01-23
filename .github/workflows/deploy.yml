@@ -34,7 +34,7 @@ jobs:
       # generate New access token 버튼 클릭 -> 적당한이름|만료기간|권한
       # 도커 허브 로그인 -> 계정 정보 -> 시크릿 변수
       - name: 도커 허브 로그인
-        run: echo "${{secrets.HUB_DOCKER_TOKEN}}" | docker login -u "${{secrets.HUB_DOCKER_NAME}}" --password-stdin
+        run: echo "${{ secrets.HUB_DOCKER_TOKEN }}" | docker login -u "${{ secrets.HUB_DOCKER_NAME }}" --password-stdin
 
       # 백엔드 이미지 생성 -> 허브(레포지토리) 푸시
       - name: 백엔드 이미지 생성 -> 허브(레포지토리) 푸시
@@ -45,8 +45,8 @@ jobs:
       # 프론트 이미지 생성 -> 허브(레포지토리) 푸시
       - name: 프론트엔드 이미지 생성 -> 허브(레포지토리) 푸시
         run: |
-          docker build -t kangbinkim/demo_frontend ./frontend
-          docker push kangbinkim/demo_frontend
+          docker build -t kangbinkim/demo_backend ./backend
+          docker push kangbinkim/demo_backend
 
       # EC2 서버로 필요 파일 업로드(YML, nginx/*.conf)
 
