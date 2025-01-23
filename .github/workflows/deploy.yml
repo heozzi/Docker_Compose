@@ -88,7 +88,7 @@ jobs:
         uses: appleboy/ssh-action@v1.1.0
         with:
           host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USERNAME }}
+          username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
           script_stop: true
           # 이미지를 갱신하지는 않는다 -> 도커컴포즈 파일에 기술하여 버전관리 할수있다
@@ -96,3 +96,14 @@ jobs:
           script: |
             sudo docker compose down
             sudo docker compose up -d
+
+    # EC2 확인
+    # sudo docker container ps
+    # 4개 서버스가 가동중인지 확인
+    # 만약, 4개가 아니면
+    # sudo docker compose up -d
+    # 체크
+    # sudo docker container ps
+    # 4개 확인
+    # http://IP 접속 확인
+
