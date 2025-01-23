@@ -34,7 +34,7 @@ services:
 #    build:
 #      context: ./backend                      # 현재 파일 위치에서 backend 밑에 도커파일을 이용하여 이미지 생성
     # 허브에서 gitaction 으로 생성하여 등록한 이미지를 받아서 컨테이너 구성
-    image: kangbinkim/demo-backend
+    image: kangbinkim/demo_backend
     networks:
       - all_dir_network
 
@@ -52,7 +52,7 @@ services:
 #    build:
 #      context: ./frontend
     # 허브에서 gitaction 으로 생성하여 등록한 이미지를 받아서 컨테이너 구성
-    image: kangbinkim/demo-frontend
+    image: kangbinkim/demo_frontend
     ports:
       - "3000:80"                           # nginx에 빌드된 결과를 넣어서 컨테이너 가동
     networks:
