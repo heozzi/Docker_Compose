@@ -45,8 +45,8 @@ jobs:
       # 프론트 이미지 생성 -> 허브(레포지토리) 푸시
       - name: 프론트엔드 이미지 생성 -> 허브(레포지토리) 푸시
         run: |
-          docker build -t kangbinkim/demo_backend ./backend
-          docker push kangbinkim/demo_backend
+          docker build -t kangbinkim/demo_frontend ./frontend
+          docker push kangbinkim/demo_frontend
 
       # EC2 서버로 필요 파일 업로드(YML, nginx/*.conf)
 
