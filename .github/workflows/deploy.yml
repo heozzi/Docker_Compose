@@ -1,6 +1,5 @@
 name: docker, ci/cd, ec2, hub
 
-
 on:
   push:
     branches:
@@ -53,5 +52,5 @@ jobs:
 
 
 #
-  deploy:
+#  deploy:
     # 도커 컴포트 진행
